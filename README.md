@@ -1,3 +1,3 @@
 # Todo-app (in development)
 
-Todo application to help keep you organized
+Todo application to help keep you organized.
