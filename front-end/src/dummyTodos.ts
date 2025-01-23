@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-export const todos = [
+export const generalTodos = [
   {
     id: "1",
     name: "Do Laundry",
@@ -55,6 +55,37 @@ export const todos = [
     name: "Go to class",
     date: dayjs(),
     completed: true,
+    comment: null,
+  },
+];
+
+export const codingTodos = [
+  {
+    id: "1",
+    name: "Plan project",
+    date: dayjs(),
+    completed: false,
+    comment: null,
+  },
+  {
+    id: "2",
+    name: "Create schemas",
+    date: dayjs(),
+    completed: false,
+    comment: "Definitely need this one",
+  },
+  {
+    id: "3",
+    name: "Take course",
+    date: dayjs(),
+    completed: true,
+    comment: "If you have time",
+  },
+  {
+    id: "4",
+    name: "Do Work",
+    date: dayjs(),
+    completed: false,
     comment: null,
   },
 ];
