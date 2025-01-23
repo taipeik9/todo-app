@@ -1,13 +1,13 @@
 import { Box, Checkbox, Typography, Modal } from "@mui/material";
-import { todos } from "../dummyTodos";
-import { todoType } from "../types/TodoType";
+import { generalTodos } from "../dummyTodos";
+import { TodoType } from "../types/TodoType";
 import "./Todo.css";
 import { useState } from "react";
 
 export default function Todo() {
   const [openModal, setOpenModal] = useState(false);
-  const [selectedTodo, setSelectedTodo] = useState<todoType | null>(null);
-  const handleOpen = (todo: todoType) => {
+  const [selectedTodo, setSelectedTodo] = useState<TodoType | null>(null);
+  const handleOpen = (todo: TodoType) => {
     setSelectedTodo(todo);
     setOpenModal(true);
   };
@@ -16,7 +16,7 @@ export default function Todo() {
   return (
     <Box>
       <Box className="todo-container">
-        {todos.map((todo: todoType) => (
+        {generalTodos.map((todo: TodoType) => (
           <Box
             key={todo.id}
             className="todo-item"
