@@ -1,19 +1,41 @@
-import { todos } from "../todos";
+import { Box, Checkbox, Typography, Modal } from "@mui/material";
+import { todos } from "../dummyTodos";
 import { todoType } from "../types/TodoType";
 import "./Todo.css";
+import { useState } from "react";
 
 export default function Todo() {
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedTodo, setSelectedTodo] = useState<todoType | null>(null);
+  const handleOpen = (todo: todoType) => {
+    setSelectedTodo(todo);
+    setOpenModal(true);
+  };
+  const handleModalClose = () => setOpenModal(false);
+
   return (
-    <div>
-      {todos.map((todo: todoType) => (
-        <div className="todo-item">
-          <div>ID: {todo.id}</div>
-          <div>Name: {todo.name}</div>
-          <div>CreatedAt: {todo.date.format()}</div>
-          <div>Completed: {todo.completed.toString()}</div>
-          <div>Comment: {todo.comment}</div>
-        </div>
-      ))}
-    </div>
+    <Box>
+      <Box className="todo-container">
+        {todos.map((todo: todoType) => (
+          <Box
+            key={todo.id}
+            className="todo-item"
+            onClick={() => handleOpen(todo)}
+          >
+            <Checkbox checked={todo.completed} />
+            <Typography className="todo-text">{todo.name}</Typography>
+          </Box>
+        ))}
+      </Box>
+      <Modal open={openModal} onClose={handleModalClose}>
+        <Box className="modal-box">
+          <Typography variant="h6" component="h2">
+            <Checkbox checked={selectedTodo?.completed} /> {selectedTodo?.name}
+          </Typography>
+          <Typography>{selectedTodo?.comment}</Typography>
+          <Typography>{selectedTodo?.date.format()}</Typography>
+        </Box>
+      </Modal>
+    </Box>
   );
 }
