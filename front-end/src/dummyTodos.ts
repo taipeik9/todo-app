@@ -19,7 +19,7 @@ export const todos = [
     id: "3",
     name: "Walk Dog",
     date: dayjs(),
-    completed: false,
+    completed: true,
     comment: "Don't forget this one!",
   },
   {
@@ -40,7 +40,7 @@ export const todos = [
     id: "6",
     name: "Workout",
     date: dayjs(),
-    completed: false,
+    completed: true,
     comment: null,
   },
   {
@@ -54,7 +54,7 @@ export const todos = [
     id: "8",
     name: "Go to class",
     date: dayjs(),
-    completed: false,
+    completed: true,
     comment: null,
   },
 ];
