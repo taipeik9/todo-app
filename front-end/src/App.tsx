@@ -2,8 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import Todo from "./components/Todo";
 import Layout from "./pages/Layout";
-import MenuIcon from "@mui/icons-material/Menu";
-import { IconButton } from "@mui/material";
 
 export default function App() {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
