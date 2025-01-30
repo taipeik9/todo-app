@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import "./Layout.css";
 import {
   Box,
   Container,
@@ -49,7 +48,10 @@ export default function Layout({
         </List>
       </Drawer>
       {children}
-      <IconButton className="menu-button" onClick={handleOpenDrawer}>
+      <IconButton
+        sx={{ position: "absolute", top: "10px", left: "10px" }}
+        onClick={handleOpenDrawer}
+      >
         <MenuIcon />
       </IconButton>
     </Container>
